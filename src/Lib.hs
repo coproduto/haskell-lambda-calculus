@@ -10,7 +10,7 @@ data Term = Var String Int
 evalTerm :: [Term] -> Term -> Term
 evalTerm env (Var name index)
   | index < 0 = (Var name index)
-  | otherwise = env !! index of
+  | otherwise = env !! index
 evalTerm env (Abs body)  = Abs (evalTerm env body)
 evalTerm env (App (Abs body) term) =
   let arg = evalTerm env term in
